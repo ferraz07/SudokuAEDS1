@@ -120,31 +120,32 @@ void jogo()
 		  {
 			  printf("Posicao vazia\n");
 			  if (tenta_colocar(linha-1, coluna-1, numero)==1)
-			  {
+			  {system("clear");
 				  printf("Quadrante OK\n");
 					escreve(linha-1,coluna-1,numero);
 					 printf("Gravado\n");
-					 system("cls");
+
 
 			   }
 			   else
-			   {
+			   {system("clear");
 				   printf("Nao foi possivel, ja existe na linha ou na coluna ou no mesmo quadrante\n");
 			   }
 		   }
 		   else
-		   {
+		   {system("clear");
 			   printf("Posicao ja esta ocupada\n");
 		   }
 		}
 		else
-		{
+		{system("clear");
 			printf("Numero invalido\n");
+
 		}
 	}
 	else
-	{
-		printf("Coordenada invalida\n");
+	{system("clear");
+		printf("Coordenada invalida\n");    
 	}
 }
 
@@ -194,3 +195,4 @@ printf("assim como nos quadrados grandes.\n\n\n");
 		 terminar();
 	 }
 }
+
