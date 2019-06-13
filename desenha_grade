@@ -6,8 +6,8 @@ void desenha_grade() {
     printf("%d", i+1);
 	printf("|");
 	for (j = 0; j < N; j++) {
-	  if (grade1[i][j] != 0)
-	printf(" %d ", grade1[i][j]);
+	  if (principal[i][j] != 0)
+	printf(" %d ", principal[i][j]);
 	  else
 	printf("   ");
 	  if (j % 3 == 2)
