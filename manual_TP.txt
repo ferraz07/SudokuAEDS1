@@ -20,3 +20,9 @@ Função jogo é a função em que o jogo acontece.
 Função terminar é a função que acaba de completar o jogo
 Função gerar tela chama a função desenha_grade e inicia o jogo
 chamando a função jogo, após pedir a linha, coluna e o número desejados.
+--------------------------------------------------------------------------------------
+printf("REGRAS DO JOGO\n");
+printf("O objetivo do jogo %c completar todos os quadrados utilizando\n",130);
+printf("n%cmeros de 1 a 9. Para complet%c-los, seguiremos a seguinte regra: \n",163,160);
+printf("N%co podem haver n%cmeros repetidos nas linhas horizontais e verticais, \n",198,163);
+printf("assim como nos quadrados grandes.\n\n\n");
