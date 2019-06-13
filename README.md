@@ -44,4 +44,6 @@ Função terminar é a função que acaba de completar o jogo.
 
 Função gerar tela chama a função desenha_grade e inicia o jogo.
 chamando a função jogo, após pedir a linha, coluna e o número desejados.
+
+Alexandre Lima, Felipe Ferraz, Júlio César.
 --------------------------------------------------------------------------------------
