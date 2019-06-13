@@ -1,6 +1,12 @@
 #include<stdio.h>
 #include<stdlib.h>
 #define N 9
+#ifdef __unix__
+    char * s = "clear";
+#else
+    char *s = "cls";
+#endif
+
 
 int facil[N][N] = {{ 0, 6, 0, 1, 0, 4, 0, 5,  0},
  { 0, 0, 8, 3, 0, 5, 6, 0, 0},
@@ -42,7 +48,7 @@ int principal[N][N];
   void inicio_do_jogo(){
     // Menu inicial do jogo
     int numero;
-    system("clear");
+    system(s);
     printf("Bem vindo ao sudoku!\n");
     printf("1| Novo jogo\n");
     printf("0| Regras\n");
@@ -50,13 +56,13 @@ int principal[N][N];
     switch(numero){
       case 1:
         // o jogo ira iniciar
-    system("clear");
+    system(s);
     printf("Boa sorte!\n");
     dificuldade();
     break;
       case 0:
       // regras do jogo
-      system("clear");
+      system(s);
       printf("O objetivo do jogador é completar um grid 9×9 (colunas verticais e linhas\n");
       printf("horizontais), preenchendo os espaços vazios com números de 1 a 9. Porém, um\n");
       printf("dado número não pode ser repetido na mesma coluna, linha ou bloco. Em\n");
@@ -71,7 +77,7 @@ int principal[N][N];
 
     void dificuldade(){
       // menu para a escolha da dificuldade do jogo.
-      system("clear");
+      system(s);
       int num,i,j;
       printf("Escolha a dificuldade do jogo.\n");
       printf("1| Fácil\n");
@@ -133,10 +139,26 @@ int principal[N][N];
   }
 }
 
-void geratela(){
-// essa função serve para adicionar as jogadas
-int linha,coluna,numero;
+		void geratela(){
+	// essa função serve para adicionar as jogadas
+	int linha,coluna,numero,remove_linha,remove_coluna,escolha;
+	system(s);
    desenha_grade();
+
+   printf("Digite 1 para adicionar uma jogada.\nDigite 0 para remover uma jogada.\n");
+   scanf("%d",&escolha);
+
+   switch(escolha) {
+	   case 0: { printf("Digite uma linha: ");
+ 			scanf("%d", &remove_linha);
+
+   			printf("Digite uma coluna: ");
+   			scanf("%d", &remove_coluna);
+			principal[remove_linha][remove_coluna] = 0;
+		   }
+		   return geratela();
+		   break;
+	case 1:{
 
    printf("Digite uma linha: ");
    scanf("%d", &linha);
@@ -148,8 +170,16 @@ int linha,coluna,numero;
    scanf("%d", &numero);
 
    if(linha == 0 && coluna== 0 && numero == 0) return inicio_do_jogo();
+	}
+	break;
 
+	default:{
+			printf("Número inválido.\n");
+			return geratela();
+		}
+		break;
    //jogo();
+}
 }
 
 
