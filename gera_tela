@@ -1,0 +1,16 @@
+void geratela()
+{
+
+   desenha_grade();
+
+   printf("Digite uma linha: ");
+   scanf("%d", &linha);
+
+   printf("Digite uma coluna: ");
+   scanf("%d", &coluna);
+
+   printf("Digite o numero: ");
+   scanf("%d", &numero);
+
+   jogo();
+}
