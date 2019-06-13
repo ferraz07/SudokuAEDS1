@@ -112,13 +112,13 @@ void jogo()
 	printf("digite 0(ZERO) para sair\n");
 	if (coordenadavalida(linha-1, coluna-1)==1)
 	{
-	   printf("Coordenada Valida\n");
+	   printf("Coordenada V%clida\n",160);
 	   if (numerovalido(numero)==1)
 	   {
-		  printf("Numero valido\n");
+		  printf("N%cmero v%clido\n",163,160);
 		  if (checar(linha-1, coluna-1, numero)==1)
 		  {
-			  printf("Posicao vazia\n");
+			  printf("Posi%c%co vazia\n",135,198);
 			  if (tenta_colocar(linha-1, coluna-1, numero)==1)
 			  {system("clear");
 				  printf("Quadrante OK\n");
@@ -129,23 +129,23 @@ void jogo()
 			   }
 			   else
 			   {system("clear");
-				   printf("Nao foi possivel, ja existe na linha ou na coluna ou no mesmo quadrante\n");
+				   printf("N%co foi poss%cvel, j%c existe na linha ou na coluna ou no mesmo quadrante!\n",198,161,160);
 			   }
 		   }
 		   else
 		   {system("clear");
-			   printf("Posicao ja esta ocupada\n");
+			   printf("Posi%c%co j%c est%c ocupada!\n",135,198,160,160);
 		   }
 		}
 		else
 		{system("clear");
-			printf("Numero invalido\n");
+			printf("N%cmero inv%clido\n",163,160);
 
 		}
 	}
 	else
 	{system("clear");
-		printf("Coordenada invalida\n");    
+		printf("Coordenada inv%clida\n",160);    
 	}
 }
 
