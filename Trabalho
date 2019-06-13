@@ -69,8 +69,8 @@ int principal[N][N];
 
     void dificuldade(){
       // menu para a escolha da dificuldade do jogo.
-      int num,i,j;
       system("clear");
+      int num,i,j;
       printf("Escolha a dificuldade do jogo.\n");
       printf("1| Fácil\n");
       printf("2| Médio\n");
@@ -78,29 +78,58 @@ int principal[N][N];
       scanf("%d",&num);
       // o switch serve para adicionar os valores da dificuldade escolhida na matriz do jogo.
       switch(num){
-        case 1:
+        case 1:{
         for(i=0;i<N;i++){
             for(j=0;j<N;j++)
             principal[i][j]= facil[i][j];
+          }}
+            desenha_grade();
+        break;
 
-        }
-        case 2:
+        case 2:{
         for(i=0;i<N;i++){
             for(j=0;j<N;j++)
             principal[i][j]= medio[i][j];
+          }}
+            desenha_grade();
+      break;
 
-      }
-      case 3:
+      case 3:{
       for(i=0;i<N;i++){
           for(j=0;j<N;j++)
           principal[i][j]= dificil[i][j];
-      
-    }
-    default: printf("Número inválido. Tente outro.");
+        }}
+            desenha_grade();
+    break;
+
+    default:{ printf("Número inválido. Tente outro.\n");
             dificuldade();
             break;
   }
 }
+}
+
+        void desenha_grade() {
+          int i,j;
+  printf("   1  2  3   4  5  6   7  8  9   \n");
+  printf(" +---------+---------+---------+ \n");
+    for (i = 0; i < N; i++) {
+      printf("%d|", i+1);
+	      // printf("|");
+	        for (j = 0; j < N; j++) {
+	           if (principal[i][j] != 0)
+	            printf(" %d ", principal[i][j]);
+	           else
+	            printf("   ");
+	            if (j % 3 == 2)
+	             printf("|");
+	}
+	     if (i % 3 == 2)
+	       printf("\n +---------+---------+---------+ ");
+	printf("\n");
+  }
+}
+
 
 
 
