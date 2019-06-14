@@ -72,18 +72,17 @@ int principal[N][N];
       printf("tamanho 3x3).\n\n\n\n");
       printf("Caso queira desistir do jogo digite '0' para linha, coluna, n%cmero.\n\n",163);
       int x;
-      printf("Aperte qualquer bot%co para voltar ao menu.\n",198);
+      printf("Digite qualquer n%cmero para voltar ao menu.\n",163);
       scanf("%d",&x);
       switch(x){
         default:{
       return inicio_do_jogo();
+      break;
     }
-    break;
     }
-  }
-  break;
-}
-}
+    }
+    }
+    }
 
     void dificuldade(){
       // menu para a escolha da dificuldade do jogo.
