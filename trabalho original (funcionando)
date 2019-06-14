@@ -63,13 +63,13 @@ int principal[N][N];
       case 0:
       // regras do jogo
       system(s);
-      printf("O objetivo do jogador é completar um grid 9×9 (colunas verticais e linhas\n");
-      printf("horizontais), preenchendo os espaços vazios com números de 1 a 9. Porém, um\n");
-      printf("dado número não pode ser repetido na mesma coluna, linha ou bloco. Em\n");
-      printf("outras palavras, basta o jogador preencher o grid com números sem repeti-los\n");
-      printf("na horizontal, vertical ou nos quadrados menores (de 9 células, quadrados de\n");
+      printf("O objetivo do jogador %c completar um grid 9×9 (colunas verticais e linhas\n",130);
+      printf("horizontais), preenchendo os espaços vazios com n%cmeros de 1 a 9. Por%cm, um\n",163,130);
+      printf("dado n%cmero n%co pode ser repetido na mesma coluna, linha ou bloco. Em\n",163,198);
+      printf("outras palavras, basta o jogador preencher o grid com n%cmeros sem repeti-los\n",163);
+      printf("na horizontal, vertical ou nos quadrados menores (de 9 c%clulas, quadrados de\n",130);
       printf("tamanho 3×3).\n\n\n\n");
-      printf("Caso queira desistir do jogo digite '0' para linha, coluna, número.\n\n");
+      printf("Caso queira desistir do jogo digite '0' para linha, coluna, n%cmero.\n\n",163);
       return inicio_do_jogo();
     }
 
@@ -80,9 +80,9 @@ int principal[N][N];
       system(s);
       int num,i,j;
       printf("Escolha a dificuldade do jogo.\n");
-      printf("1| Fácil\n");
-      printf("2| Médio\n");
-      printf("3| Difícil\n");
+      printf("1| F%ccil\n",160);
+      printf("2| M%cdio\n",130);
+      printf("3| Dif%ccil\n",161);
       scanf("%d",&num);
       // o switch serve para adicionar os valores da dificuldade escolhida na matriz do jogo.
       switch(num){
@@ -110,7 +110,7 @@ int principal[N][N];
           geratela();
     break;
 
-    default:{ printf("Número inválido. Tente outro.\n");
+    default:{ printf("N%cmero inv%clido. Tente outro.\n",163,160);
             dificuldade();
             break;
   }
@@ -166,7 +166,7 @@ int principal[N][N];
    printf("Digite uma coluna: ");
    scanf("%d", &coluna);
 
-   printf("Digite o numero: ");
+   printf("Digite o n%cmero: ",163);
    scanf("%d", &numero);
 
    if(linha == 0 && coluna== 0 && numero == 0) return inicio_do_jogo();
@@ -174,7 +174,7 @@ int principal[N][N];
 	break;
 
 	default:{
-			printf("Número inválido.\n");
+			printf("N%cmero inv%clido.\n",163,160);
 			return geratela();
 		}
 		break;
