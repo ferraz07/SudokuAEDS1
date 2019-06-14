@@ -54,26 +54,36 @@ int principal[N][N];
     printf("0| Regras\n");
     scanf("%d",&numero);
     switch(numero){
-      case 1:
+      case 1:{
         // o jogo ira iniciar
     system(s);
     printf("Boa sorte!\n");
     dificuldade();
+    }
     break;
-      case 0:
+      case 0:{
       // regras do jogo
       system(s);
-      printf("O objetivo do jogador %c completar um grid 9×9 (colunas verticais e linhas\n",130);
-      printf("horizontais), preenchendo os espaços vazios com n%cmeros de 1 a 9. Por%cm, um\n",163,130);
+      printf("O objetivo do jogador %c completar um grid 9x9 (colunas verticais e linhas\n",130);
+      printf("horizontais), preenchendo os espa%cos vazios com n%cmeros de 1 a 9. Por%cm, um\n",135,163,130);
       printf("dado n%cmero n%co pode ser repetido na mesma coluna, linha ou bloco. Em\n",163,198);
       printf("outras palavras, basta o jogador preencher o grid com n%cmeros sem repeti-los\n",163);
       printf("na horizontal, vertical ou nos quadrados menores (de 9 c%clulas, quadrados de\n",130);
-      printf("tamanho 3×3).\n\n\n\n");
+      printf("tamanho 3x3).\n\n\n\n");
       printf("Caso queira desistir do jogo digite '0' para linha, coluna, n%cmero.\n\n",163);
+      int x;
+      printf("Aperte qualquer bot%co para voltar ao menu.\n",198);
+      scanf("%d",&x);
+      switch(x){
+        default:{
       return inicio_do_jogo();
     }
-
+    break;
+    }
   }
+  break;
+}
+}
 
     void dificuldade(){
       // menu para a escolha da dificuldade do jogo.
@@ -154,7 +164,7 @@ int principal[N][N];
 
    			printf("Digite uma coluna: ");
    			scanf("%d", &remove_coluna);
-			principal[remove_linha][remove_coluna] = 0;
+			principal[remove_linha-1][remove_coluna-1] = 0;
 		   }
 		   return geratela();
 		   break;
@@ -189,4 +199,4 @@ int principal[N][N];
   int main(){
     inicio_do_jogo();
     return 0;
-  }
+}
