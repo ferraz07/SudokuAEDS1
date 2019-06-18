@@ -57,14 +57,14 @@ int principal[N][N];
     switch(numero){
       case 1:{
         // o jogo ira iniciar
-    system(s);
+        system(s);
     printf("Boa sorte!\n");
     dificuldade();
     }
     break;
       case 0:{
       // regras do jogo
-      system(s);
+     system(s);
       printf("O objetivo do jogador %c completar um grid 9x9 (colunas verticais e linhas\n",130);
       printf("horizontais), preenchendo os espa%cos vazios com n%cmeros de 1 a 9. Por%cm, um\n",135,163,130);
       printf("dado n%cmero n%co pode ser repetido na mesma coluna, linha ou bloco. Em\n",163,198);
@@ -189,12 +189,15 @@ int principal[N][N];
    //jogo();
 }
 }
-      int coordenadavalida(int linha, int coluna)
-{
-  if(linha>=0 && linha <9 && coluna>=0 && coluna <9)
-	  return 1;
-   else
-	  return 0;
+      int coordenadavalida(int linha, int coluna){
+
+        int cont=0;
+
+  if(linha>=0 && linha <9) cont++;
+  if(coluna>=0 && coluna <9) cont++;
+
+	if(cont == 2) return 1;
+  else return 0;
 }
 
 
@@ -207,7 +210,7 @@ int principal[N][N];
 
 }
       int checar(int linha, int coluna) {
-	 if (principal[linha][coluna]==0)
+	 if (principal[linha-1][coluna-1]==0)
 		 return 1;
 	 else
 		 return 0;
@@ -274,9 +277,15 @@ void jogo(){
 
   int flag=0;
 
-  
+  if(coordenadavalida(linha-1 , coluna-1)==1) flag++;
+  if(numerovalido(numero)==1) flag++;
+  if(checar(linha, coluna)==1) flag++;
+  if(tenta_colocar_linha(linha-1, coluna-1, numero)==1) flag++;
+  if(tenta_colocar_coluna(linha-1, coluna-1, numero)==1) flag++;
+  if(tenta_colocar_matriz(linha-1, coluna-1, numero)==1) flag++;
 
-
+  if(flag == 6) escreve(linha-1, coluna-1, numero);
+  else printf("N%co foi poss%cvel fazer esta jogada.\n",198,161);
 }
 
 
