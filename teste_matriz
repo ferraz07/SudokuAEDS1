@@ -240,55 +240,45 @@ int principal[N][N];
 
   int tenta_colocar_matriz(int linha, int coluna, int numero){
 
-    int testelinha,testecoluna;
+    int testelinha,testecoluna,i,j,cont;
 
+    if(linha-1<=0 || linha-1<=2){
+      if(coluna-1<=0 || coluna-1<=2) testelinha=linha; testecoluna=coluna;
+      if(coluna-1<=3 || coluna-1<=5) testelinha=linha; testecoluna=coluna;
+      if(coluna-1<=6 || coluna-1<=8) testelinha=linha; testecoluna=coluna;
+    }
+    if(linha-1<=3 || linha-1<=5){
+      if(coluna-1<=0 || coluna-1<=2) testelinha=linha; testecoluna=coluna;
+      if(coluna-1<=3 || coluna-1<=5) testelinha=linha; testecoluna=coluna;
+      if(coluna-1<=6 || coluna-1<=8) testelinha=linha; testecoluna=coluna;
+    }
+    if(linha-1<=6 || linha-1<=8){
+      if(coluna-1<=0 || coluna-1<=2) testelinha=linha; testecoluna=coluna;
+      if(coluna-1<=3 || coluna-1<=5) testelinha=linha; testecoluna=coluna;
+      if(coluna-1<=6 || coluna-1<=8) testelinha=linha; testecoluna=coluna;
+    }
+    for(i=testelinha-1;i<=testelinha+1;i++){
+      for(j=testecoluna-1;j<=testecoluna+1;j++){
+        if(numero != principal[i][j]) cont++;
+      }
+}
+    if(cont == N) return 1;
+    else return 0;
   }
 
 
       void escreve(int linha, int coluna, int numero) {
 	         principal[linha][coluna]=numero;
 }
-void jogo()
-{
-	if (coordenadavalida(linha-1, coluna-1)==1)
-	{
-	   printf("Coordenada V%clida\n",160);
-	   if (numerovalido(numero)==1)
-	   {
-		  printf("N%cmero v%clido\n",163,160);
-		  if (checar(linha-1, coluna-1)==1)
-		  {
-			  printf("Posi%c%co vazia\n",135,198);
-			  if (tenta_colocar(linha-1, coluna-1, numero)==1)
-			  {
-				  printf("Quadrante OK\n");
-					escreve(linha-1,coluna-1,numero);
-					 printf("Gravado\n");
+void jogo(){
+
+  int flag=0;
+
+  
 
 
-
-			   }
-			   else
-			   {system(s);
-				   printf("N%co foi poss%cvel, j%c existe na linha ou na coluna ou no mesmo quadrante!\n",198,161,160);
-			   }
-		   }
-		   else
-		   {system(s);
-			   printf("Posi%c%co j%c est%c ocupada!\n",135,198,160,160);
-		   }
-		}
-		else
-		{system(s);
-			printf("N%cmero inv%clido\n",163,160);
-
-		}
-	}
-	else
-	{system(s);
-		printf("Coordenada inv%clida\n",160);
-	}
 }
+
 
 
   int main(){
