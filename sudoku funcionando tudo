@@ -52,6 +52,7 @@ int principal[N][N];
     system(s);
     printf("Bem vindo ao sudoku!\n");
     printf("1| Novo jogo\n");
+    printf("2| Sair do jogo\n");
     printf("0| Regras\n");
     scanf("%d",&numero);
     switch(numero){
@@ -180,25 +181,24 @@ int principal[N][N];
 
    printf("Digite o n%cmero: ",163);
    scanf("%d", &numero);
-   
-   jogo(linha, coluna, numero);
+
    if(linha==0 && coluna==0 && numero==0){
-   printf("Você desistiu. Bom jogo!\n");
-   return inicio_do_jogo();
+     return inicio_do_jogo();
    }
+   jogo(linha, coluna, numero);
 	break;
+  case 2:
+  return 0;
+  break;
 	default:{
-			printf("N%cmero inv%clido.\n",163,160);
 			return geratela();
 		}
 		break;
-   //jogo();
 }
 }
       int coordenadavalida(int linha, int coluna){
 
-        int cont=0;
-  printf("%d, %d\n",linha,coluna);
+  int cont=0;
   if(linha>=0 && linha <9) cont++;
   if(coluna>=0 && coluna <9) cont++;
 
@@ -209,7 +209,6 @@ int principal[N][N];
 
       int numerovalido(int numero)
 {
-  printf("%d n\n",numero);
   if(numero>0 && numero <=9)
 	 return 1;
    else
@@ -265,7 +264,7 @@ int checar(int linha, int coluna) {
   return 1;
 }
 
-    
+
 
 
       void escreve(int linha, int coluna, int numero) {
@@ -277,52 +276,52 @@ void jogo(int linha, int coluna, int numero){
 
   if(coordenadavalida(linha-1, coluna)==1) {
     flag++;
-    printf("Coordenada: %d, %d, %d\n",linha, coluna, numero);}
+  }
   if(numerovalido(numero)==1){
     flag++;
-    printf("Numero %d, %d, %d\n",linha, coluna, numero);}
+  }
   if(checar(linha-1, coluna-1)==1){
     flag++;
-    printf("Checar.\n %d, %d, %d\n",linha, coluna, numero);}
+  }
   if(tenta_colocar_linha(linha-1, coluna-1, numero)==1){
     flag++;
-    printf("Linha.\n %d, %d, %d\n",linha, coluna, numero);}
+  }
   if(tenta_colocar_coluna(linha-1, coluna-1, numero)==1){
     flag++;
-    printf("Coluna.\n %d, %d, %d\n",linha, coluna, numero);}
+  }
   if(tenta_colocar_matriz(linha-1, coluna-1, numero)==1){
     flag++;
-    printf("Matriz.\n %d, %d, %d\n",linha, coluna, numero);}
+  }
   if(flag == 6){
    escreve(linha-1, coluna-1, numero);
-   if(terminar()==1){
-   	printf("DEITOU, VOCE GANHOU!!!!!!!!");
+   if(terminar(principal)==1){
+     system(s);
+   	printf("DEITOU, VOC%c GANHOU!!!!!!!!\n",210);
+    return 0;
    }
    else geratela();
 }
-  else {
-  printf("N%co foi poss%cvel fazer esta jogada.\n",198,161);
-  geratela();}
+  else
+  geratela();
 }
 
-int terminar(){
-int i,j,cont=0;
-for(i=0;i<N;i++){
+int terminar(int principal[N][N]){
+  int i,j,cont=0;
+  for(i=0;i<N;i++){
 	for(j=0;j<N;j++){
-		if(principal[i][j]!=0){
-		cont++;	
+	if(principal[i][j]!=0){
+	cont++;
 }
-}	
+}
 }
 if(cont==81){
 	return 1;
 }
-else return 0;	
+else return 0;
 }
 
 
   int main(){
     inicio_do_jogo();
-    geratela();
     return 0;
 }
