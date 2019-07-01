@@ -1,3 +1,0 @@
-void escreve(int linha, int coluna, int numero) {
-	 principal[linha][coluna]=numero;
-}
