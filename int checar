@@ -1,6 +1,0 @@
-int checar(int linha, int coluna, int numero) {
-	 if (principal[linha][coluna]==0)
-		 return 1;
-	 else
-		 return 0;
-}
