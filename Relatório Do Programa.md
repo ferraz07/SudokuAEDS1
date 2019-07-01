@@ -70,13 +70,7 @@ O ponteiro FILE *arquivo foi declarado para salvar e carregar o jogo em arquivos
 *int terminar: Essa função checa após toda jogada se os 81 lugares na matriz estão preenchidos, se estiver o jogo se encerra, mostrando o tempo e uma mensagem parabenizando o jogador.
 
 
-*void resolve: Essa função serve para resolver o sudoku automaticamente.
-
-
-*void ajuda_resolver: Ela verifica se está completa a matriz e se sim, ela imprimirá na tela a matriz completa. Caso não esteja completa ela analisa posição por posição e vai adicionando números nas posições vazias.
-
-
-*int completo: Ela verifica se o número que a função ajuda_resolver quer adicionar na posição vazia segue as regras do jogo, quando o número segue as regras ele é adicionado na matriz e salvo. Ela vai rodando para todas as posições vazias na matriz. 
+Matriz Resolução: Ela é a matriz totalmente resolvida de forma correta, independente da dificulade escolhida.
 
 
 *int main: A função principal do jogo, ela chama a inicio_do_jogo e inicia o programa. Ela também é responsável por salvar o tempo em que o jogador ficou com o programa aberto e jogando, quando ele se encerra, ela mostra o tempo de demora do usuário, em horas, minutos e segundos.
